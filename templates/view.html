@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head></head>
+   <body>
+      <hr/>
+      {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+      <a href= 'http://127.0.0.1:5000/'>HOME</a>
+      <table>
+         <thead>
+            <tr>
+               <th>Name</th>
+               <th>Mail</th>
+            </tr>
+         </thead>
+         <tbody>
+            {% for user in users %}
+               <tr>
+                  <td>{{ user.name }}</td>
+                  <td>{{ user.mail }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+      
+   </body>
+</html>
